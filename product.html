@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArcticAir</title>
+    <link type="text/css" rel="stylesheet" href="./assets/css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="./assets/css/style.css" />
+    <link type="text/css" rel="stylesheet" href="./assets/css/responsive.css" />
+    <link type="text/css" rel="stylesheet" href="./assets/css/product.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="assets/js/navbar.js"></script>
+  </head>
+  <body>
+    <div id="pageLoader">
+      <div class="spinner-border text-warning" role="status"></div>
+    </div>
+
+    <div class="header-light position-absolute w-100">
+      <div
+        class="topbar d-flex d-lg-none w-100 px-4 py-2 justify-content-end align-items-center gap-2"
+      >
+        <span class="icon phone"></span> <a class="text-white" href="#">+7 (812) 000-00-00</a>
+      </div>
+
+      <nav class="navbar navbar-expand-lg bg-none w-100">
+        <div class="container-xxl mx-2 mx-lg-34px mx-xxl-auto justify-content-between">
+          <a class="navbar-brand bounceInDown order-0" id="logo-text" href="#"
+            ><img src="assets/images/icons/logo.svg"
+          /></a>
+
+          <button id="mobileMenuToggle" class="navbar-toggler order-2">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul
+              class="navbar-nav top-menu flex-grow-1 flex-xl-grow-0 justify-content-around justify-content-xl-center column-gap-xxl-34px column-gap-xl-25px"
+            >
+              <li class="nav-item position-relative">
+                <a class="nav-link top-menu-item" aria-current="page" href="#">Каталог</a>
+                <div class="submenu-container">
+                  <div class="submenu-container-inner justify-content-between">
+                    <div class="submenu-columns">
+                      <a href="#" class="nav-link">Сплит-системы</a>
+                      <a href="#" class="nav-link">Мульти сплит-системы в Москве</a>
+                      <a href="#" class="nav-link">Оконные кондиционеры</a>
+                      <a href="#" class="nav-link">Промышленные кондиционеры</a>
+                      <a href="#" class="nav-link">Вентиляция</a>
+                      <a href="#" class="nav-link">Обогрев</a>
+                      <a href="#" class="nav-link">Осушители воздуха</a>
+                      <a href="#" class="nav-link">Увлажнители воздуха</a>
+                      <a href="#" class="nav-link">Очистители воздуха</a>
+                      <a href="#" class="nav-link">Аксессуары</a>
+                    </div>
+                    <div class="submenu-image ms-3">
+                      <img
+                        src="assets/images/outdoor-component-air-conditioning-system-surrounded-by-snow-winter-season 1.png"
+                        alt="Air conditioning"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link top-menu-item" href="#">О компании</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link top-menu-item" href="#">Доставка</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link top-menu-item" href="#">Оплата</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link top-menu-item" href="#">Контакты</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="header-right order-1">
+            <div class="position-relative">
+              <span
+                id="showFloatingSearch"
+                class="icon-btn search d-none d-lg-flex d-xxl-none"
+              ></span>
+              <span id="mobileSearchInMenuBtn" class="icon-btn search d-flex d-lg-none"></span>
+              <div
+                id="floatingSearchForm"
+                style="display: none"
+                class="input-group search-form rounded-pill justify-content-center align-items-center d-xxl-flex"
+              >
+                <span class="input-group-text bg-transparent border-0 position-absolute">
+                  <span class="search-icon"></span>
+                  Поиск
+                </span>
+                <div class="position-relative d-inline-block">
+                  <input
+                    type="text"
+                    id="headerSearchInput"
+                    class="header-search-input form-control rounded-pill me-2 bg-transparent border-0"
+                    placeholder=" "
+                  />
+                  <button
+                    class="search-clear-button btn btn-link position-absolute top-50 end-0 translate-middle-y me-2 d-none"
+                  >
+                    &times;
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="header-icons column-gap-25px column-gap-xl-35px">
+              <span class="icon-btn phone"></span>
+              <span class="icons-separator d-none d-lg-flex"></span>
+              <div class="functions-icons column-gap-25px column-gap-xl-35px">
+                <span class="icon-btn account d-none d-lg-flex"></span>
+                <span class="icon-btn compare has-value d-none d-lg-flex">10</span>
+                <span class="icon-btn favorites d-none d-lg-flex"></span>
+                <span class="icon-btn cart has-value">18</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div id="mobileMenu" class="mobile-menu">
+      <div>
+        <div class="mobile-menu-header mb-5">
+          <a class="navbar-brand" href="#"><img src="assets/images/icons/logo.svg" /></a>
+          <button class="btn text-white" id="closeMobileMenu">&times;</button>
+        </div>
+
+        <nav class="mobile-menu-nav">
+          <a class="nav-link" href="#">Главная</a>
+          <a
+            class="nav-link submenu-parent"
+            href="#"
+            data-bs-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            data-bs-target="#submenu"
+            >Каталог</a
+          >
+          <div class="submenu collapse" id="submenu">
+            <a href="#" class="nav-link">Сплит-системы</a>
+            <a href="#" class="nav-link">Мульти сплит-системы в Москве</a>
+            <a href="#" class="nav-link">Оконные кондиционеры</a>
+            <a href="#" class="nav-link">Промышленные кондиционеры</a>
+            <a href="#" class="nav-link">Вентиляция</a>
+            <a href="#" class="nav-link">Обогрев</a>
+            <a href="#" class="nav-link">Осушители воздуха</a>
+            <a href="#" class="nav-link">Увлажнители воздуха</a>
+            <a href="#" class="nav-link">Очистители воздуха</a>
+            <a href="#" class="nav-link">Аксессуары</a>
+          </div>
+          <a class="nav-link" href="#">Услуги</a>
+          <a class="nav-link" href="#">Контакты</a>
+        </nav>
+      </div>
+
+      <div class="mobile-menu-footer">
+        <div
+          class="w-100 input-group search-form rounded-pill justify-content-center align-items-center d-xxl-flex"
+        >
+          <span class="input-group-text bg-transparent border-0 position-absolute">
+            <span class="search-icon"></span>
+            Поиск
+          </span>
+          <div class="position-relative d-inline-block w-100">
+            <input
+              id="mobileMenuSearchInput"
+              type="text"
+              class="header-search-input form-control rounded-pill me-2 bg-transparent border-0"
+              placeholder=" "
+            />
+            <button
+              class="search-clear-button btn btn-link position-absolute top-50 end-0 translate-middle-y me-2 d-none"
+            >
+              &times;
+            </button>
+          </div>
+        </div>
+        <div class="header-icons">
+          <span class="icon-btn phone"></span>
+          <span class="icons-separator"></span>
+          <span class="icon-btn account"></span>
+          <span class="icon-btn compare has-value">10</span>
+          <span class="icon-btn favorites"></span>
+          <span class="icon-btn cart has-value">18</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="have-questions">
+      <div class="container">
+        <div class="have-questions__wrapper">
+          <div class="have-questions__title" data-aos="fade-down">Остались вопросы о товаре?</div>
+          <div class="have-questions__text" data-aos="fade-down">
+            Короткое описание с указанием боли, потребности или критерия выбора целевой аудитории +
+            призыв к действию оставить контакты
+          </div>
+
+          <form class="have-questions__form">
+            <fieldset class="have-questions__form-inputs">
+              <input
+                class="have-questions__form-inputs-name"
+                type="text"
+                placeholder="Ваше имя"
+                required
+              />
+              <input
+                class="have-questions__form-inputs-phone"
+                type="tel"
+                placeholder="Номер телефона"
+                required
+              />
+              <input
+                class="have-questions__form-inputs-question"
+                type="text"
+                placeholder="Ваш вопрос"
+                required
+              />
+            </fieldset>
+
+            <fieldset class="have-questions__form-submit">
+              <button class="have-questions__form-submit-button">Проконсультироваться</button>
+            </fieldset>
+
+            <label class="have-questions__form-checkbox">
+              <input class="have-questions__form-checkbox-input" type="checkbox" required />
+              <div class="have-questions__form-checkbox-text">
+                Нажимая на кнопку, вы даете согласие на обработку своих
+                <a href="#">персональных данных</a>
+              </div>
+            </label>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="bestsellers">
+      <div class="container overflow-hidden">
+        <div class="row flex-row justify-content-between header-row has-slider align-items-center">
+          <span class="h3 section-header d-block" data-aos="fade-down">Недавно просмотренные</span
+          ><span class="right-arrow swiper-button-next bestsellers-swiper-button-next"></span>
+        </div>
+        <div class="swiper bestsellers-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div
+                class="product-card co-3 position-relative"
+                data-aos="fade-down"
+                data-aos-delay="100"
+              >
+                <div class="product-card-inner">
+                  <a href="#">
+                    <div class="card-img-container">
+                      <img src="assets/images/ac.png" class="product-cart-image" alt="..." />
+                    </div>
+                  </a>
+                  <div class="shop-item__badges">
+                    <span class="sale_badge badge rounded-pill bg-warning">-10%</span>
+                  </div>
+                  <div class="shop-item__icons">
+                    <span class="icon-btn compare"></span>
+                    <span class="icon-btn favorites"></span>
+                  </div>
+                  <div class="shop-item-body">
+                    <a class="shop-item__title" href="#">Midea MSAG3-24N8D0</a>
+                    <div class="shop-item__price">
+                      <a class="add_to_cart_button"></a>
+                      <span class="price">10 912 ₽</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide overflw-visible">
+              <div
+                class="product-card co-3 position-relative"
+                data-aos="fade-down"
+                data-aos-delay="200"
+              >
+                <div class="product-card-inner">
+                  <a href="#">
+                    <div class="card-img-container">
+                      <img src="assets/images/ac.png" class="product-cart-image" alt="..." />
+                    </div>
+                  </a>
+                  <div class="shop-item__badges">
+                    <span class="sale_badge badge rounded-pill bg-warning">-10%</span>
+                  </div>
+                  <div class="shop-item__icons">
+                    <span class="icon-btn compare"></span>
+                    <span class="icon-btn favorites"></span>
+                  </div>
+                  <div class="shop-item-body">
+                    <a class="shop-item__title" href="#">Midea MSAG3-24N8D0</a>
+                    <div class="shop-item__price">
+                      <a class="add_to_cart_button"></a>
+                      <span class="price">10 912 ₽</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide overflw-visible">
+              <div
+                class="product-card co-3 position-relative"
+                data-aos="fade-down"
+                data-aos-delay="300"
+              >
+                <div class="product-card-inner">
+                  <a href="#">
+                    <div class="card-img-container">
+                      <img src="assets/images/ac.png" class="product-cart-image" alt="..." />
+                    </div>
+                  </a>
+                  <div class="shop-item__badges">
+                    <span class="sale_badge badge rounded-pill bg-warning">-10%</span>
+                  </div>
+                  <div class="shop-item__icons">
+                    <span class="icon-btn compare"></span>
+                    <span class="icon-btn favorites"></span>
+                  </div>
+                  <div class="shop-item-body">
+                    <a class="shop-item__title" href="#">Midea MSAG3-24N8D0</a>
+                    <div class="shop-item__price">
+                      <a class="add_to_cart_button"></a>
+                      <span class="price">10 912 ₽</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide overflw-visible">
+              <div
+                class="product-card co-3 position-relative"
+                data-aos="fade-down"
+                data-aos-delay="400"
+              >
+                <div class="product-card-inner">
+                  <a href="#">
+                    <div class="card-img-container">
+                      <img src="assets/images/ac.png" class="product-cart-image" alt="..." />
+                    </div>
+                  </a>
+                  <div class="shop-item__badges">
+                    <span class="sale_badge badge rounded-pill bg-warning">-10%</span>
+                  </div>
+                  <div class="shop-item__icons">
+                    <span class="icon-btn compare"></span>
+                    <span class="icon-btn favorites"></span>
+                  </div>
+                  <div class="shop-item-body">
+                    <a class="shop-item__title" href="#">Midea MSAG3-24N8D0</a>
+                    <div class="shop-item__price">
+                      <a class="add_to_cart_button"></a>
+                      <span class="price">10 912 ₽</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacts">
+      <div class="container">
+        <div class="row d-flex justify-content-center" data-aos="fade-up">
+          <a class="w-auto logo" href="#"><img src="assets/images/logo-black.svg" /></a>
+        </div>
+        <div class="row menu">
+          <div class="col-12 col-sm-6 mb-34px mb-sm-0">
+            <div class="row menu-title" data-aos="fade-right">
+              <div>Информация о компании</div>
+            </div>
+            <div
+              class="row menu-items gy-10px gy-lg-5px"
+              data-aos="fade-right"
+              data-aos-delay="50"
+              data-aos-easing="ease-out"
+            >
+              <div class="col-12 col-lg-6">
+                <div class="contacts-menu-item"><a href="#">О компании</a></div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="contacts-menu-item"><a href="#">Доставка и оплата</a></div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="contacts-menu-item"><a href="#">Гарантия и сервис</a></div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="contacts-menu-item"><a href="#">В кредит</a></div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="contacts-menu-item"><a href="#">Акции</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6">
+            <div class="row menu-title" data-aos="fade-left">
+              <div>Обратная связь</div>
+            </div>
+            <div
+              class="row menu-items gy-10px gy-lg-5px"
+              data-aos="fade-left"
+              data-aos-delay="50"
+              data-aos-easing="ease-out"
+            >
+              <div class="col-12 col-lg-6">
+                <div class="contacts-menu-item"><a href="#">Отзывы и предложения</a></div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="contacts-menu-item"><a href="#">Отзывы</a></div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="contacts-menu-item"><a href="#">Задать вопрос</a></div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="contacts-menu-item"><a href="#">Пожаловаться директору</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="row white-block px-3 pb-25px pt-25px pb-25px px-sm-25px gx-sm-4"
+          data-aos="zoom-in"
+          data-aos-duration="600"
+          data-aos-delay="100"
+          data-aos-easing="ease-out-back"
+        >
+          <div class="col-12 col-lg-6 mb-45px mb-lg-0 ps-sm-20px col-contacts">
+            <h2 class="contacts-title">Контакты</h2>
+
+            <div class="contact-badges-wrapper">
+              <h6>Телефон</h6>
+              <div class="contact-badges">
+                <div class="contact-badge">+7 (812) 000-00-00</div>
+                <div class="contact-badge">+7 (812) 000-00-00</div>
+                <div class="contact-badge">+7 (812) 000-00-00</div>
+              </div>
+            </div>
+
+            <div class="address-wrapper">
+              <h6>Адрес</h6>
+              <p class="mb-0">
+                Potter ipsum together oddment horntail love through detention bathroom are burrow
+                turban
+              </p>
+            </div>
+
+            <div class="socials-wrapper">
+              <h6>Соц сети</h6>
+              <div class="socials">
+                <a href="#" class="social-link"><i class="vk-icon"></i></a>
+                <a href="#" class="social-link"><i class="youtube-icon"></i></a>
+                <a href="#" class="social-link"><i class="telegram-icon"></i></a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-12 col-lg-6 form-wrapper ps-sm-30px px-20px px-sm-3 pt-sm-25px pe-sm-40px py-40px"
+          >
+            <h2 class="form-title">Задать вопрос</h2>
+
+            <form>
+              <input
+                type="text"
+                class="form-control"
+                name="name"
+                placeholder="Напишите свой вопрос"
+              />
+
+              <div class="row">
+                <div class="col-12 col-sm-6 mb-2 mb-sm-0">
+                  <input type="tel" class="form-control" placeholder="Телефон" />
+                </div>
+
+                <div class="col-12 col-sm-6">
+                  <input type="text" class="form-control px-4 py-3" placeholder="Ваше имя" />
+                </div>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="consent" />
+                <label class="form-check-label" for="consent">
+                  Я соглашаюсь с условиями и даю согласие на обработку моих персональных данных
+                </label>
+              </div>
+
+              <button type="submit" class="btn">ОТПРАВИТЬ</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <ul class="footer-menu">
+        <li><a href="#">Политика конфиденциальности</a></li>
+        <li><a href="#">Договор оферта</a></li>
+      </ul>
+      <span>© 2011-2025, ArcticAir</span>
+      <span class="site-author">Создание сайта: </span>
+    </footer>
+
+    <button id="scrollUpBtn" class="btn rounded-circle">
+      <i class="arrow-up"></i>
+    </button>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

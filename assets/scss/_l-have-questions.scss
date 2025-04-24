@@ -1,0 +1,225 @@
+.have-questions {
+  margin: 65px 0;
+
+  &__wrapper {
+    padding: 76px 82px 40px;
+    box-sizing: border-box;
+    background-color: #0d3459;
+
+    @include desktop {
+      padding: 60px 60px 40px;
+    }
+
+    @include laptop {
+      padding: 60px 32px 40px;
+    }
+
+    @include tablet {
+      padding: 40px 20px 40px;
+    }
+
+    @include mobile {
+      padding: 40px 20px 30px;
+    }
+  }
+
+  &__title {
+    max-width: 1080px;
+    margin: 0 0 30px;
+    font-weight: 900;
+    font-size: 100px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: #fff;
+
+    @include desktop {
+      font-size: 72px;
+      line-height: 110%;
+    }
+
+    @include laptop {
+      margin: 0 0 18px;
+      font-size: 64px;
+      line-height: 120%;
+    }
+
+    @include tablet {
+      font-size: 56px;
+    }
+
+    @include mobile {
+      font-size: 40px;
+    }
+  }
+
+  &__text {
+    max-width: 632px;
+    padding: 0 0 54px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 156%;
+    color: #fff;
+
+    @include laptop {
+      padding: 0 0 30px;
+      font-size: 16px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 34px;
+    padding: 46px 0 0;
+    border-top: 1px solid #ffffff;
+
+    @include laptop {
+      padding: 32px 0 0 ;
+      gap: 20px;
+    }
+
+    &-inputs {
+      display: flex;
+      flex: 1 1 auto;
+      gap: 10px;
+
+      @include desktopsm {
+        flex-wrap: wrap;
+        flex: 1 1 calc(50%);
+      }
+
+      &-name,
+      &-phone,
+      &-question {
+        display: inline-block;
+        padding: 19px 20px;
+        box-sizing: border-box;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 125%;
+        color: #fff;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        outline: none;
+        background-color: rgba($color: #ffffff, $alpha: 0);
+
+        &::placeholder {
+          color: #fff;
+        }
+      }
+
+      &-name {
+        flex: 1 1 250px;
+
+        @include desktopsm {
+          flex: 0 0 calc(50% - 10px / 2);
+        }
+
+        @include laptop {
+          flex: 1 1 100%;
+        }
+      }
+
+      &-phone {
+        flex: 1 1 300px;
+
+        @include desktopsm {
+          flex: 0 0 calc(50% - 10px / 2);
+        }
+
+        @include laptop {
+          flex: 1 1 100%;
+        }
+      }
+
+      &-question {
+        flex: 1 1 400px;
+
+        @include desktopsm {
+          flex: 1 1 100%;
+        }
+      }
+    }
+
+    &-submit {
+      padding: 5px 0;
+
+      @include laptop {
+        flex: 1 1 100%;
+      }
+
+      &-button {
+        padding: 17px 34px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 100%;
+        text-align: center;
+        color: #4c81ff;
+        border: none;
+        border-radius: 50px;
+        background-color: #ffffff;
+        transition-property: color, background-color;
+        transition-timing-function: ease-out;
+        transition-duration: 0.2s;
+        cursor: pointer;
+
+        @include laptop {
+          width: 100%;
+        }
+
+        &:hover {
+          color: #ffffff;
+          background-color: #4c81ff;
+        }
+      }
+    }
+
+    &-checkbox {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 10px 0 24px;
+
+      &::before {
+        content: '';
+        display: block;
+        flex: 0 0 auto;
+        width: 26px;
+        height: 26px;
+        border: 1px solid #ffffff;
+        border-radius: 10px;
+        background-color: rgba($color: #ffffff, $alpha: 0);
+        transition: background-color ease-out 0.2s;
+        cursor: pointer;
+      }
+
+      &:has(input:checked)::before {
+        background: url(../images/icons/mdi_tick.svg) center / 22px no-repeat;
+        background-color: rgba($color: #ffffff, $alpha: 1);
+
+      }
+
+      &-input {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        opacity: 0;
+      }
+
+      &-text {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 125%;
+        color: #fff;
+
+        & a {
+          color: inherit;
+          text-decoration: underline;
+          text-decoration-skip-ink: none;
+        }
+      }
+    }
+  }
+}
