@@ -4,22 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ArcticAir</title>
-    <link type="text/css" rel="stylesheet" href="./assets/css/bootstrap.css" />
-    <link type="text/css" rel="stylesheet" href="./assets/css/style.css" />
-    <link type="text/css" rel="stylesheet" href="./assets/css/responsive.css" />
-    <link type="text/css" rel="stylesheet" href="./assets/css/product.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
+    <link rel="stylesheet" href="./assets/css/product.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
@@ -28,6 +28,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
     <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/product.js" defer></script>
   </head>
   <body>
     <div id="pageLoader">
@@ -212,7 +213,7 @@
     <section class="product-info">
       <div class="container">
         <div class="product-info__wrapper">
-          <div class="product-info__sidebar">
+          <div class="product-info__sidebar" data-aos="fade-right">
             <figure class="product-info__sidebar-photo">
               <img
                 class="product-info__sidebar-photo-image"
@@ -227,7 +228,7 @@
             </div>
           </div>
 
-          <div class="product-info__main">
+          <div class="product-info__main" data-aos="fade-left">
             <div class="product-info__main-id">ID товара: 44525432</div>
 
             <div class="product-info__main-info">
@@ -284,9 +285,7 @@
                 </figure>
                 <div class="product-info__main-details-item-text">
                   <div class="product-info__main-details-item-text-title">В наличие</div>
-                  <div class="product-info__main-details-item-text-description">
-                    Смотрят 15
-                  </div>
+                  <div class="product-info__main-details-item-text-description">Смотрят 15</div>
                 </div>
               </div>
 
@@ -300,10 +299,157 @@
                 </figure>
                 <div class="product-info__main-details-item-text">
                   <div class="product-info__main-details-item-text-title">Страна</div>
-                  <div class="product-info__main-details-item-text-description">
-                    Китай
+                  <div class="product-info__main-details-item-text-description">Китай</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-details">
+      <div class="container">
+        <div class="product-details__wrapper">
+          <div class="product-details__tabs">
+            <div class="product-details__tabs-controls">
+              <button
+                class="product-details__tabs-controls-button active"
+                data-target="characteristics"
+              >
+                Характеристики
+              </button>
+              <button class="product-details__tabs-controls-button" data-target="reviews">
+                Отзывы
+              </button>
+              <button class="product-details__tabs-controls-button" data-target="faq">
+                Вопросы и ответы
+              </button>
+            </div>
+
+            <div class="product-details__tabs-list">
+              <div class="product-details__tabs-list-item active" data-name="characteristics">
+                <div class="product-details__subtabs">
+                  <div class="product-details__subtabs-controls">
+                    <button
+                      class="product-details__subtabs-controls-button active"
+                      data-target="main"
+                    >
+                      Основное
+                    </button>
+                    <button class="product-details__subtabs-controls-button" data-target="power">
+                      Мощность охлаждения
+                    </button>
+                    <button
+                      class="product-details__subtabs-controls-button"
+                      data-target="consumption"
+                    >
+                      Расход воздуха
+                    </button>
+                    <button class="product-details__subtabs-controls-button" data-target="noise">
+                      Уровень шума
+                    </button>
+                    <button class="product-details__subtabs-controls-button" data-target="modes">
+                      Режимы работы
+                    </button>
+                    <button
+                      class="product-details__subtabs-controls-button"
+                      data-target="functions"
+                    >
+                      Другие функции
+                    </button>
+                  </div>
+
+                  <div class="product-details__subtabs-list">
+                    <div class="product-details__subtabs-list-item active" data-name="main">
+                      <div class="product-details__tabs-info">
+                        <div class="product-details__tabs-info-item">
+                          <div class="product-details__tabs-info-item-title">
+                            Операционная система
+                          </div>
+                          <div class="product-details__tabs-info-item-value">iOS 18</div>
+                        </div>
+                        <div class="product-details__tabs-info-item">
+                          <div class="product-details__tabs-info-item-title">Класс защиты</div>
+                          <div class="product-details__tabs-info-item-value">
+                            Класс защиты IP68 (максимальная глубина погружения до 6 метров в течение
+                            30 минут) по стандарту IEC 60529
+                          </div>
+                        </div>
+                        <div class="product-details__tabs-info-item">
+                          <div class="product-details__tabs-info-item-title">Материал корпуса</div>
+                          <div class="product-details__tabs-info-item-value">
+                            Стекло, керамика, алюминий
+                          </div>
+                        </div>
+                        <div class="product-details__tabs-info-item">
+                          <div class="product-details__tabs-info-item-title">Тип SIM-карты</div>
+                          <div class="product-details__tabs-info-item-value">Nano Sim + eSIM</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product-details__subtabs-list-item" data-name="power">
+                      Мощность охлаждения
+                    </div>
+                    <div class="product-details__subtabs-list-item" data-name="consumption">
+                      Расход воздуха
+                    </div>
+                    <div class="product-details__subtabs-list-item" data-name="noise">
+                      Уровень шума
+                    </div>
+                    <div class="product-details__subtabs-list-item" data-name="modes">
+                      Режимы работы
+                    </div>
+                    <div class="product-details__subtabs-list-item" data-name="functions">
+                      Другие функции
+                    </div>
                   </div>
                 </div>
+              </div>
+
+              <div class="product-details__tabs-list-item" data-name="reviews">Отзывы</div>
+
+              <div class="product-details__tabs-list-item" data-name="faq">Вопросы и ответы</div>
+            </div>
+          </div>
+
+          <div class="product-details__info">
+            <div class="product-details__info-size">
+              <div class="product-details__info-size-item">
+                <span class="product-details__info-size-item-name">Вес</span>
+                <span class="product-details__info-size-item-value">170 г</span>
+              </div>
+              <div class="product-details__info-size-item">
+                <span class="product-details__info-size-item-name">Размеры</span>
+                <span class="product-details__info-size-item-value">147.6 x 71.6 x 7.8 мм</span>
+              </div>
+            </div>
+
+            <div class="product-details__info-brand">
+              <div class="product-details__info-brand-title">Бренд</div>
+              <img
+                class="product-details__info-brand-logo"
+                src="./assets/images/brands/bosch.png"
+                alt="bosch"
+              />
+            </div>
+
+            <div class="product-details__info-descripton">
+              <div class="product-details__info-descripton-title">Лорен ипсум</div>
+
+              <div class="product-details__info-descripton-text">
+                Специально созданный для Apple Intelligence. Он опережает на два поколения чип A16
+                Bionic в iPhone 15. И он обеспечивает функции камеры следующего уровня, такие как
+                фотографические стили и Camera Control. Все это с исключительной
+                энергоэффективностью для продления срока службы батареи.
+              </div>
+            </div>
+
+            <div class="product-details__info-descripton">
+              <div class="product-details__info-descripton-title">Лорен ипсум</div>
+
+              <div class="product-details__info-descripton-text">
+                У iPhone 16 надежный корпус из алюминия аэрокосмического класса и прочное, красивое цветное стекло на задней панели. Материал Ceramic Shield последнего поколения в два раза прочнее любого стекла для смартфонов. А новая внутренняя конструкция эффективнее рассеивает тепло, поэтому вы получите лучшую производительность. Смартфон устойчив к брызгам, воде и пыли.
               </div>
             </div>
           </div>
