@@ -687,6 +687,7 @@
           transform: rotate(180deg);
 }
 .custom-pagination__link, .custom-pagination__divider {
+  padding: 9px 4px 7px;
   font-weight: 300;
   font-size: 14px;
   line-height: 100%;
