@@ -763,6 +763,7 @@
   line-height: 100%;
   color: #000000;
   border: none;
+  background-color: rgba(245, 245, 245, 0);
   -webkit-transition: color ease-out 0.2s;
   transition: color ease-out 0.2s;
 }
